@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace ShootingDice
 {
@@ -8,6 +9,16 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
+
+
+
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.WriteLine();
+            Console.Clear();
+            Console.WriteLine("Lets Shoot some Dice");
+            Console.WriteLine();
+            Console.WriteLine("\u2680 \u2685 \u2685  \u2680  ");
+
             Player player1 = new Player();
             player1.Name = "Bob";
 
@@ -66,10 +77,16 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            Player soreUpper = new SoreLoserUpperHalfPlayer();
+            soreUpper.Name = "Upper Minor Whiner ";
+            soreUpper.Play(upper);
+
+            Console.WriteLine("-------------------");
+
 
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, taunto, oneup, smartass, sore, upper
+                player1, player2, player3, large, taunto, oneup, smartass, sore, upper, soreUpper
             };
 
             PlayMany(players);
